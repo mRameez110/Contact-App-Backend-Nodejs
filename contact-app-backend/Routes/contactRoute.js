@@ -10,7 +10,6 @@ const {
 
 // git hub sett
 // ds
-console.log("chk");
 // router.route("/").get(getContacts);
 // router.route("/").post(createContact);
 // router.route("/:id").get(getContact);
