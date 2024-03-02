@@ -14,7 +14,6 @@ const {
 // router.route("/:id").put(updateContact);
 // router.route("/:id").delete(deleteContact);
 
-console.log(":hello");
 // More Professional way to reduce number of lines(As some routes are same)
 
 router.route("/").get(getContacts).post(createContact);
