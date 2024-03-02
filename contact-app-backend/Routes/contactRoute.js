@@ -13,7 +13,7 @@ const {
 // router.route("/:id").get(getContact);
 // router.route("/:id").put(updateContact);
 // router.route("/:id").delete(deleteContact);
-console.log(":hi");
+
 
 // More Professional way to reduce number of lines(As some routes are same)
 
