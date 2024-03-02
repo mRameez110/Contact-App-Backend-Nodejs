@@ -9,8 +9,8 @@ const {
 } = require("../controllers/contactController");
 
 // git hub sett
-// ds as
-
+// ds
+console.log("chk");
 // router.route("/").get(getContacts);
 // router.route("/").post(createContact);
 // router.route("/:id").get(getContact);
