@@ -12,6 +12,8 @@ app.use(express.json()); // Express Midleware: To parse the client/Api request
 const port = process.env.PORT || 5000;
 
 app.use("/api/contacts", require("./Routes/contactRoute"));
+app.use("/api/users", require("./Routes/userRoutes"));
+
 app.use(errorHandler); //  to run globally
 
 app.listen(port, () => {
