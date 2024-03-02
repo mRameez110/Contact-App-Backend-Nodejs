@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
+const { use } = require("../Routes/contactRoute");
 
 //  Register a user
 //  POST /api/users/register
@@ -32,11 +33,12 @@ const registerUser = asyncHandler(async (req, res) => {
   console.log(`User created ${user}`);
   if (user) {
     res.status(201).json({ _id: user.id, email: user.email });
+    console.log("this is user created response");
   } else {
+    console.log("this is Error in user created response");
     res.status(400);
     throw new Error("User data is not valid");
   }
-  res.json({ message: "Register the user" });
 });
 
 //   Login user
@@ -73,8 +75,10 @@ const loginUser = asyncHandler(async (req, res) => {
 //   Current user info
 //  GET /api/users/current
 //  Access private
+
 const currentUser = asyncHandler(async (req, res) => {
-  res.json({ message: "urrent user" });
+  console.log("This is current user block and user value is", req.user);
+  res.json(req.user);
 });
 
 module.exports = { registerUser, loginUser, currentUser };

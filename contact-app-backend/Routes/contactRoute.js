@@ -8,6 +8,8 @@ const {
   deleteContact,
 } = require("../controllers/contactController");
 
+const validateToken = require("../middlewares/validateTokenHandler");
+
 // router.route("/").get(getContacts);
 // router.route("/").post(createContact);
 // router.route("/:id").get(getContact);
@@ -16,6 +18,7 @@ const {
 
 // More Professional way to reduce number of lines(As some routes are same)
 
+router.use(validateToken); // when use midleware with every below request
 router.route("/").get(getContacts).post(createContact);
 router.route("/:id").get(getContact).put(updateContact).delete(deleteContact);
 
